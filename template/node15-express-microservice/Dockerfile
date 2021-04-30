@@ -1,6 +1,6 @@
 # Copyright by Alex Ellis MIT (https://github.com/openfaas-incubator/node10-express-template), adopted by Nicolai Schmid
 
-FROM openfaas/of-watchdog:0.8.1 as watchdog
+FROM openfaas/of-watchdog:0.8.2 as watchdog
 
 FROM node:15.14.0-alpine as ship
 
