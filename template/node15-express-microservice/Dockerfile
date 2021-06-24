@@ -48,9 +48,10 @@ ENV fprocess="node index.js"
 ENV mode="http"
 ENV upstream_url="http://127.0.0.1:3000"
 
-ENV exec_timeout="10s"
-ENV write_timeout="15s"
-ENV read_timeout="15s"
+ENV upstream_timeout="240m1s"
+ENV exec_timeout="240m5s"
+ENV read_timeout="240m10s"
+ENV write_timeout="240m10s"
 
 HEALTHCHECK --interval=3s CMD [ -e /tmp/.lock ] || exit 1
 
