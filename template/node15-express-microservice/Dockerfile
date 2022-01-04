@@ -29,7 +29,7 @@ COPY index.js ./
 # entry allows caching of yarn install
 WORKDIR /home/app/function
 COPY function/package.json function/yarn.lock ./
-RUN yarn --noch-cache --frozen-lockfile || :
+RUN yarn --no-cache --frozen-lockfile || :
 
 # COPY function files and folders
 COPY function/ ./
