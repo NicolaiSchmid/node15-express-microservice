@@ -17,7 +17,7 @@ RUN mkdir -p /home/app
 
 # Wrapper/boot-strapper
 WORKDIR /home/app
-COPY package.json ./
+COPY package.json yarn.lock ./
 
 # This ordering means the yarn installation is cached for the outer function handler.
 RUN yarn --no-cache --frozen-lockfile
@@ -28,7 +28,7 @@ COPY index.js ./
 # COPY function node packages and install, adding this as a separate
 # entry allows caching of yarn install
 WORKDIR /home/app/function
-COPY function/*.json ./
+COPY function/package.json function/yarn.lock ./
 RUN yarn --noch-cache --frozen-lockfile || :
 
 # COPY function files and folders
